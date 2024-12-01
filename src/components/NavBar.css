@@ -1,0 +1,16 @@
+.container{
+    height: 200px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button{
+    background-color: aquamarine;
+    border-radius: 5px;
+    padding: 12px;
+    text-decoration: none;
+    /* color: white; */
+    font-size: large;
+}

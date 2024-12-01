@@ -7,7 +7,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main-div{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 300px;
+  padding: 12px;
+  margin: auto;
+}
+
+.main-div input{
+  margin: 10px;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.account{
+  display: flex;
+  gap: 9px;
+}
+
+.text{
+  text-decoration: none;
+}
+
+.main-div button{
+  background-color: aquamarine;
+  width: 100px;
+  padding: 5px;
+  border-radius: 20px;
+  margin-left: 90px;
 }

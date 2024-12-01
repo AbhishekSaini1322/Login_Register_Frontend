@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
 
@@ -15,14 +15,14 @@ const Register = () => {
   const submitHandler = (e) => {
     e.preventDefault()
     axios
-  .post("http://localhost:8000/api/register", {name,email,password,phoneNumber})
+  .post("http://localhost:8000/api/update/:_id", {name,email,password,phoneNumber})
   .then((response) => {console.log(response)
     navigate('/login')
   })
   .catch((error) => {
     if (error.response && error.response.status === 400) {
       console.error("Validation Error:", error.response.data.msg);
-      alert(error.response.data.msg);
+      alert(error.response.data.msg); 
     } else {
       console.error("Unexpected Error:", error);
     }
@@ -31,10 +31,9 @@ const Register = () => {
   }
 
   return (
-    <div >
-    
-    <form className='main-div' onSubmit={submitHandler}>
-    <h2>Register</h2>
+    <div>
+    <h2>Update Profile</h2>
+    <form onSubmit={submitHandler}>
       <input
         type="text"
         placeholder="Name"
@@ -66,15 +65,10 @@ const Register = () => {
         onChange={(e)=> setPassword(e.target.value)}
         required
       />
-      <button type="submit">Register</button>
-
-      <div className='account'>
-        <p>Already account ?</p>
-        <Link className='text' to='/login'>Login</Link>
-      </div>
-      
+      <button type="submit">Update</button>
       </form>
-      
+      {/* <p>Already account</p>
+      <Link to='/login'>Login</Link> */}
     
   </div>
   )
